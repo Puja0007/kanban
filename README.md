@@ -71,4 +71,15 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 
 
+### how to start the backend server 
+
+1. git clone https://github.com/approjecthub/Kanban-BE
+2. add .env file in backend project folder
+3. npm install in the backend project folder
+4. use the command 
+    ### npm run dev     
+
+
+
+
 https://getcssscan.com/css-box-shadow-examples

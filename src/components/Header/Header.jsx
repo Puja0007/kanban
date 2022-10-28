@@ -1,17 +1,23 @@
 import { useContext } from "react";
 import { useNavigate   } from 'react-router-dom';
 import  AuthContext from '../../context/auth-context';
+import { useEffect, useState } from "react";
 import './Header.scss'
 
 function Header(){
   const navigate = useNavigate();
   const ctx = useContext(AuthContext);
+  const [isLogin, setIsLogin] = useState(false);
 
   function getUserDetails(){
     //const {currentUser} = useAuthValue();
     //console.log("Current User: ", currentUser);
   }
-
+useEffect(() => {
+ if(localStorage.getItem('token')){
+   setIsLogin(true);
+ }
+}, [])
 
   function navigateToLogin(){
     console.log("this will navigate to login page. ");
@@ -40,13 +46,13 @@ function Header(){
             <i className="fa-sharp fa-solid fa-bars"></i>
             <span>kanban</span>
           </div>
-          { !ctx.isLoggedIn && 
+          { !isLogin && 
           <div className="header-container-navbuttons">
             <button onClick={navigateToLogin}> Login </button> 
             <button onClick={navigateToSignUp}> Signup </button>
           </div>
           }
-          { ctx.isLoggedIn && 
+          { isLogin && 
           <div className="header-container-navbuttons">
             <button onClick={logout}> Logout </button>
           </div>
