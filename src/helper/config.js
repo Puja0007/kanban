@@ -1,4 +1,4 @@
-import {LOGIN_URL, REGISTER_URL, CREATEBOARD_URL, GETALLBOARDS_URL} from '../constants/constants';
+import {LOGIN_URL, REGISTER_URL, CREATEBOARD_URL, GETALLBOARDS_URL, GETALLTASKS_URL, CREATETASK_URL} from '../constants/constants';
 import {httpRequest} from '../Utils/httpRequest/httpRequest';
 import { getToken } from './helper';
 
@@ -65,3 +65,35 @@ export const LOGIN_CONFIG = async (emailid, password) => {
       console.log('error', error);
     }
   };
+
+  export const getAllTaskByBoardId_config = async (boardId) => {
+    const config = {
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json', Authorization: `Bearer ${TOKEN}` },
+    };
+    try {
+      return httpRequest(GETALLTASKS_URL + boardId, config);
+    } catch (error) {
+      console.log('error', error);
+    }
+  };
+
+  export const createTask_config = async (boardId, title,description,status,subtasks) => {
+    // description not mendatory
+    const config = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json', Authorization: `Bearer ${TOKEN}` },
+      body: JSON.stringify({
+        boardId: boardId,
+        title: title,
+        description: description,
+        status: status,
+        subtasks: subtasks,
+      }),
+    };
+    try {
+      return httpRequest(CREATETASK_URL,config);
+    } catch (error) {
+      console.log('error', error);
+    }
+  }

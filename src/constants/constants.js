@@ -38,5 +38,6 @@ export const RESET_PASSWORD_URL = `${environment.BASE_URL}/auth/reset-password`;
 export const CREATEBOARD_URL = `${environment.BASE_URL}/board/`;
 export const GETALLBOARDS_URL = `${environment.BASE_URL}/board/`;
 export const GETALLTASKS_URL = `${environment.BASE_URL}/task/`;
+export const CREATETASK_URL = `${environment.BASE_URL}/task/`;
 
 export {dummyTask, dummyBoards} 

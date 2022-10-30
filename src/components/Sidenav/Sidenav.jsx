@@ -15,7 +15,7 @@ function Sidenav({currentBoard}){
   
 
     useEffect(() => {
-        fetchBoardList();
+     fetchBoardList();
     },[])
     
     function fetchBoardList(){
@@ -38,7 +38,7 @@ function Sidenav({currentBoard}){
                setBoardList((prevVal) => {
                    let boards = [...prevVal];
                    boards.map( x=> {
-                       if(x.id === parseInt(currentBoard)){ 
+                       if(x.id === currentBoard){ 
                            x.isActive = true;
                        } else {
                            x.isActive = false;
@@ -63,7 +63,7 @@ function Sidenav({currentBoard}){
         setBoardList((prevVal) => {
             let boards = [...prevVal];
             boards.map( x=> {
-                if(x.id === parseInt(index)){ 
+                if(x.id === index){ 
                     x.isActive = true;
                 } else {
                     x.isActive = false;

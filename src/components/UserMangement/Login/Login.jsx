@@ -34,7 +34,7 @@ function Login() {
     // registerFormValidation();
   
     if(isValid){
-      console.log("submit");
+      //console.log("submit");
       LOGIN_CONFIG(enteredEmail,enteredPassword).then((response)=>{
        // console.log(response);
         toast.success('logged In Successfully !', {

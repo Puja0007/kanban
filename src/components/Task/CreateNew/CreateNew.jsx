@@ -1,6 +1,7 @@
 import Popup from "../../Popup/Popup";
 import "./CreateNew.scss";
 
+
 function CreateNew({showPopup , hidePopup}){
 
     function getHeader(){
