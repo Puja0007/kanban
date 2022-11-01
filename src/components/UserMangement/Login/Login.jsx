@@ -30,6 +30,75 @@ function Login() {
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
   // const [enteredEmail, setEnteredEmail] = useState('');
+  const boardData = [
+    {
+      
+      "title": "Todo",
+      "id":0,
+      "tasks": [
+        {
+          "id": 1667237221192.053,
+          "title": "Task-1",
+          "status": "todo",
+          "subtasks": [
+            {
+              "id": 1667237245179.4934,
+              "status": "todo",
+              "title": "SubTask-Task1"
+            }
+          ]
+        },
+        {
+          "id": 1667237227503.8738,
+          "title": "Task-2",
+          "status": "todo",
+          "subtasks": [
+            {
+              "id": 1667237260838.8723,
+              "status": "todo",
+              "title": "SubTask-task2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Doing",
+      "id": 1,
+      "tasks": [
+        {
+          "id": 1667237271571.8845,
+          "title": "Task-2",
+          "status": "doing",
+          "subtasks": []
+        },
+        {
+          "id": 1667237280282.2913,
+          "title": "Task-3",
+          "status": "doing",
+          "subtasks": []
+        }
+      ]
+    },
+    {
+      "title": "Done",
+      "id":2,
+      "tasks": [
+        {
+          "id": 1667237288692.4836,
+          "title": "Task-4",
+          "status": "done",
+          "subtasks": []
+        },
+        {
+          "id": 1667237294656.7283,
+          "title": "Task-5",
+          "status": "done",
+          "subtasks": []
+        }
+      ]
+    }
+  ];
   const onSubmit = () => {
     // registerFormValidation();
   
@@ -37,6 +106,8 @@ function Login() {
       //console.log("submit");
       LOGIN_CONFIG(enteredEmail,enteredPassword).then((response)=>{
        // console.log(response);
+       localStorage.setItem("boardData", JSON.stringify(boardData));
+
         toast.success('logged In Successfully !', {
           position: toast.POSITION.TOP_CENTER
       });
