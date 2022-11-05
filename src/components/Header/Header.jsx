@@ -17,7 +17,10 @@ useEffect(() => {
  if(localStorage.getItem('token')){
    setIsLogin(true);
  }
-}, [])
+ else{
+    setIsLogin(false);
+ }
+})
 
   function navigateToLogin(){
     console.log("this will navigate to login page. ");

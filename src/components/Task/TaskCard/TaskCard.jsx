@@ -18,10 +18,11 @@ function TaskCard(props){
     return(
         <div className="task-card fade-in"
         >
-            <div className="task-title" draggable
-            onDragEnd={() => props.dragEnded(props.boardId, props.taskId)}
-            onDragEnter={() => props.dragEntered(props.boardId, props.taskId)}
-            > {props.task.title} </div>
+            <div className="task-title" 
+            onDragStart={(e)=> props.dragStart(e,props.boardId, props.taskId)}
+            onDragEnd={(e) => props.dragEnded(e)}
+            onDragEnter={(e) => props.dragEntered(e,props.boardId, props.taskId)}
+            draggable> {props.task.title} </div>
             {/* {taskDetails} */}
         </div>
     )

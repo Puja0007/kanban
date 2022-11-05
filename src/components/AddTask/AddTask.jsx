@@ -30,7 +30,7 @@ function AddTask(){
         // distructure data
        // const { title, subtask, description, status } = data;
         let boardId =id;
-        console.log("BoardId: ", boardId);
+      //  console.log("BoardId: ", boardId);
        createTask_config(boardId, enteredTitle, enteredDescription, status, enteredSubTaskList).then((response) => {
             console.log(response);
             

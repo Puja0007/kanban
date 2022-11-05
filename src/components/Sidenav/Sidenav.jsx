@@ -19,6 +19,7 @@ function Sidenav({currentBoard}){
     },[])
     
     function fetchBoardList(){
+        console.log("fetchBoardList");
        // const token = localStorage.getItem('token');
         getAllBoards_config().then((response)=>{
            // console.log(response);
